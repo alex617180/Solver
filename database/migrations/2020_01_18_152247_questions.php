@@ -17,6 +17,7 @@ class Questions extends Migration
             $table->increments('id');
             $table->string('text');
             $table->string('description');
+            $table->timestamps();
         });
     }
 

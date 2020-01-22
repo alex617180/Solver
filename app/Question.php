@@ -9,10 +9,9 @@ class Question extends Model
     protected $fillable = [
         'text', 'description',
     ];
-    public $timestamps = false;
 
     public function answer()
     {
-        return $this->hasMany('App\Answer', 'id_parent');
+        return $this->hasMany('App\Answer', 'parent_id');
     }
 }

@@ -44,8 +44,7 @@ class ModalController extends Controller
     public function store(Request $request)
     {
         $id = $request->session()->get('id');
-        $answer = Answer::create(['text' => $request->text, 'id_parent' => $id]);
-        // dd($answer->questionParent);
+        $answer = Answer::create(['text' => $request->text, 'parent_id' => $id]);
         return redirect()->route('modal.show', $answer->questionParent);
     }
 
@@ -107,8 +106,7 @@ class ModalController extends Controller
     public function editquestion(Request $request)
     {
         $answer = Answer::find($request->id);
-        // dd($answer);
-        $answer->update(['id_child' => $request->id_child]);
+        $answer->update(['child_id' => $request->child_id]);
         return view('modal.show', [
             'question'  => $answer->questionParent,
         ]);

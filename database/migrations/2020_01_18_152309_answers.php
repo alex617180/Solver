@@ -16,8 +16,9 @@ class Answers extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('text');
-            $table->integer('id_parent');
-            $table->integer('id_child')->nullable($value = true);
+            $table->integer('parent_id');
+            $table->integer('child_id')->nullable($value = true);
+            $table->timestamps();
         });
     }
 
