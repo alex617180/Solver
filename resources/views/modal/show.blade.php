@@ -44,7 +44,7 @@
                     <form action="{{route('editquestion', ['id' => $answer->id, ])}}" method="post">
                         @method('POST')
                         @csrf
-                        <select name="id_child">
+                        <select name="child_id">
                             @foreach ($question->all() as $item)
                             <option value="{{$item->id}}">{{$item->text}}</option>
                             @endforeach
