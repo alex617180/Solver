@@ -5,22 +5,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Решатель (путеводитель)</title>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Solver') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="/css/bootstrap.css" rel="stylesheet">
-        <link href="/css/app.css" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/bootstrap.js') }}" defer></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
 
     <body>
         <div id="app">
             @yield('content')
         </div>
-        <script src="/js/bootstrap.js"></script>
-        <script src="/js/main.js"></script>
     </body>
 
 </html>

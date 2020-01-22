@@ -12,10 +12,14 @@
     'index', 'create', 'store',
 ]]
 */
-Route::get('/', function () {
-    return redirect('/main');
-});
+// Route::get('/', function () {
+//     return redirect('/main');
+// });
 Route::resource('/main', 'MainController');
 Route::resource('/modal', 'ModalController');
 Route::post('/editquestion', 'ModalController@editquestion')->name('editquestion');
+
+Route::get('/start', 'AjaxController@index')->name('start');
+Route::get('/get-json', 'AjaxController@getJson')->name('json');
+
 
